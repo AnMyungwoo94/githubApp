@@ -12,7 +12,7 @@ object ApiClient {
         .addInterceptor{
             val request =  it.request()
                 .newBuilder()
-                .addHeader("Authorization","Bearer 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")
+                .addHeader("Authorization","Bearer (개인토큰값 넣기)")
                 .build()
             it.proceed(request)
         }
