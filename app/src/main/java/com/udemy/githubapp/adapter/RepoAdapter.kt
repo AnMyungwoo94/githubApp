@@ -18,9 +18,16 @@ class RepoAdapter(private val onclick: (Repo) -> Unit):
 
         fun bind(item: Repo) {
             viewBinding.repoNameTextView.text = item.name
+            if(viewBinding.repoNameTextView!!.text.length > 18){
+                val preview = viewBinding.repoNameTextView!!.text.substring(0,18) + "..."
+                viewBinding.repoNameTextView!!.text = preview
+            }
             viewBinding.descriptionTextView.text = item.description
             viewBinding.starCountTextView.text = item.starCount.toString()
             viewBinding.forkCountTextView.text = item.forkCount.toString()
+            viewBinding.createAtTextView.text = item.created_at
+            val createText =  viewBinding.createAtTextView!!.text.substring(0,10)
+            viewBinding.createAtTextView!!.text = createText
 
             viewBinding.root.setOnClickListener {
                 onclick(item)

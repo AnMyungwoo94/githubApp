@@ -4,19 +4,39 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="?android:attr/selectableItemBackground"
-    android:padding="16dp">
+    android:background="@drawable/background_radius"
+    android:layout_margin="5dp"
+    android:padding="15dp">
 
-    <TextView
-        android:id="@+id/repoNameTextView"
-        android:layout_width="0dp"
+    <LinearLayout
+        android:id="@+id/LinearLayout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@color/black"
-        android:textSize="18sp"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="Repository Name" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/repoNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:layout_weight="1"
+            tools:text="Repository Name" />
+
+        <TextView
+            android:id="@+id/createAtTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            tools:text="Repository create_at" />
+    </LinearLayout>
 
     <TextView
         android:id="@+id/descriptionTextView"
@@ -25,7 +45,7 @@
         android:layout_marginTop="2dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/repoNameTextView"
+        app:layout_constraintTop_toBottomOf="@id/LinearLayout"
         tools:text="This is description" />
 
     <ImageView

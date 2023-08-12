@@ -42,7 +42,6 @@ class UserAdapter(val onClick:(User)-> Unit): ListAdapter<User, UserAdapter.View
             )
         )
     }
-
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         //리스트 아이템에 선정되어 있는 아이템은 currentList로 불러올 수 있음
         holder.bind(currentList[position])

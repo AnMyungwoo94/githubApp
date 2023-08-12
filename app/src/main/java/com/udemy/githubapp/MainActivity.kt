@@ -54,7 +54,7 @@ class MainActivity : AppCompatActivity() {
             handler.removeCallbacks(runnable)
             handler.postDelayed(
                 runnable,
-                300,
+                1000,
             )
         }
     }

@@ -17,4 +17,6 @@ data class Repo(
     val forkCount : Int,
     @SerializedName("html_url")
     val htmlUrl : String,
+    @SerializedName("created_at")
+    val created_at : String
 )
